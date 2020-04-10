@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 int pre[10001];
-int find(int x)	//²éÑ¯¸ù½Úµã 
+int find(int x)	//æŸ¥è¯¢æ ¹èŠ‚ç‚¹ 
 {
-	if(!pre[x]||pre[x]==x) return x;	//×¢Òâ×Ô¼ºÁ¬½Ó×Ô¼ºµÄÇé¿ö 
-	return pre[x]=find(pre[x]);	//Â·¾¶Ñ¹ËõËã·¨£º½«find(pre[x])ĞŞ¸ÄÎªpre[x]=find(pre[x])
-								//				¼´Áî±¾¼¶µÈÓÚÉÏÒ»¼¶£¬×îÖÕ´ïµ½Ñ¹ËõĞ§¹û 
+	if(!pre[x]||pre[x]==x) return x;	//æ³¨æ„è‡ªå·±è¿æ¥è‡ªå·±çš„æƒ…å†µ 
+	return pre[x]=find(pre[x]);	//è·¯å¾„å‹ç¼©ç®—æ³•ï¼šå°†find(pre[x])ä¿®æ”¹ä¸ºpre[x]=find(pre[x])
+								//				å³ä»¤ä¸Šä¸€çº§ç­‰äºæ ¹èŠ‚ç‚¹ï¼Œæœ€ç»ˆè¾¾åˆ°å‹ç¼©æ•ˆæœ 
 }
 int main()
 {
