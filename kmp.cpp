@@ -1,12 +1,12 @@
-#include <bits/stdc++.h>		// Âå¹ÈP3375 
-using namespace std;			// Ëã·¨Ñ§Ï°ÍøÖ·£ºhttps://www.bilibili.com/video/av3246487?from=search&seid=17199625369609405904 
-char s1[1000001],s2[1000001];  //Ö÷´® ×Ó´® 
-int next[1000001];  //ÁÙÊ±Êı×é 
+#include <bits/stdc++.h>		// æ´›è°·P3375 
+using namespace std;			// ç®—æ³•å­¦ä¹ ç½‘å€ï¼šhttps://www.bilibili.com/video/av3246487?from=search&seid=17199625369609405904 
+char s1[1000001],s2[1000001];  //ä¸»ä¸² å­ä¸² 
+int next[1000001];  //ä¸´æ—¶æ•°ç»„ (å‰ç¼€åç¼€æœ€é•¿å…¬å…±å…ƒç´ é•¿åº¦)
 int main()
 {
 	scanf("%s %s",s1,s2);
-	int str1=strlen(s1),str2=strlen(s2);	//×¢ÒâÏÈ´æ´¢Æä³¤¶È£¬·´¸´µ÷ÓÃstrlenº¯Êı£¬»áÔÚÑ­»·ÄÚÊ¹Ê±¼ä¸´ÔÓ¶È±©ÕÇ 
-	//¹¹½¨ÁÙÊ±Êı×é
+	int str1=strlen(s1),str2=strlen(s2);	//æ³¨æ„å…ˆå­˜å‚¨å…¶é•¿åº¦ï¼Œåå¤è°ƒç”¨strlenå‡½æ•°ï¼Œä¼šåœ¨å¾ªç¯å†…ä½¿æ—¶é—´å¤æ‚åº¦æš´æ¶¨ 
+	//æ„å»ºä¸´æ—¶æ•°ç»„
 	int l,r;
 	for(l=0,r=1,next[0]=0;r<str2;r++)
 	{
@@ -17,25 +17,25 @@ int main()
 		}
 		else
 		{
-			if(l) l=next[l-1],r--;  //rÒÆ¶¯ÔİÍ£ 
+			if(l) l=next[l-1],r--;  //rç§»åŠ¨æš‚åœ 
 			else next[r]=0;
 		}
 	}
-	//Æ¥Åä½×¶Î 
+	//åŒ¹é…é˜¶æ®µ 
 	for(int i=0,j=0;i<str1;i++)
 	{
 		if(s1[i]==s2[j])
 		{
-			if(j==str2-1)			//Æ¥Åä³É¹¦ 
+			if(j==str2-1)			//åŒ¹é…æˆåŠŸ 
 			{
 				printf("%d\n",i-str2+2);
 				j=next[j];
 			}
 			else j++;
 		}
-		else if(j) j=next[j-1],i--;			//Æ¥ÅäÊ§°ÜÀûÓÃÁÙÊ±Êı×é·µ»Ø (i--Ê¹Ö®ÔİÍ£)
+		else if(j) j=next[j-1],i--;			//åŒ¹é…å¤±è´¥åˆ©ç”¨ä¸´æ—¶æ•°ç»„è¿”å› (i--ä½¿ä¹‹æš‚åœ)
 	} 
-	//ÁÙÊ±Êı×é´òÓ¡ 
+	//ä¸´æ—¶æ•°ç»„æ‰“å° 
 	for(int i=0;i<str2;i++)
 	{
 		if(i) printf(" ");
