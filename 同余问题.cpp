@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>    //川大新生赛(欧拉筛) 
+#include <bits/stdc++.h>    //麓篓麓贸脨脗脡煤脠眉(脜路脌颅脡赂)  
 using namespace std;
 long long f(int n)
 {
