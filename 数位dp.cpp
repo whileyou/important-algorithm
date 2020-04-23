@@ -1,6 +1,6 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h>	//hdu2089
 using namespace std;
-int n,m,dp[10][10];		//dpÇ°Ò»¸ö´ú±íÎ»Êı£¬ºóÒ»¸ö´ú±í×î¸ßÎ»µÄÊı×ÖµÄÖµ 
+int n,m,dp[10][10];		//dpå‰ä¸€ä¸ªä»£è¡¨ä½æ•°ï¼Œåä¸€ä¸ªä»£è¡¨æœ€é«˜ä½çš„æ•°å­—çš„å€¼ 
 int ask(int n)
 {
 	int x[10],len=0,ans=0;
@@ -23,7 +23,7 @@ int ask(int n)
 }
 int main()
 {
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	for(int j=0;j<10;j++) dp[1][j]=1;
 	dp[1][4]=0;
 	for(int i=2;i<10;i++)
@@ -39,7 +39,7 @@ int main()
 	}
 	while(~scanf("%d %d",&n,&m)&&(n||m))
 	{
-		printf("%d\n",ask(m+1)-ask(n));	//Ç°×ººÍË¼ÏëµÃ´ğ°¸ 
+		printf("%d\n",ask(m+1)-ask(n));	//å‰ç¼€å’Œæ€æƒ³å¾—ç­”æ¡ˆ 
 	}
 	return 0;
 }
