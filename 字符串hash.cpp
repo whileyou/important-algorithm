@@ -12,7 +12,7 @@ int main()
 		int i;
 		for(i=1;i<=strlen(a);i++)                            //¹«Ê½ 
 		hash[i] = ( ( hash[i-1] * base ) + a[i-1] ) % mod ;   //¹«Ê½ 
-		vis[j++]=hash[i];          //Ó³Éä´æ´¢ 
+		vis[j++]=hash[i-1];          //Ó³Éä´æ´¢ 
 		//cout<<hash[i-1]<<endl;
 	}
 	sort(vis,vis+n1);
