@@ -10,9 +10,9 @@ int main()
 	{
 		cin>>a;
 		int i;
-		for(i=1;i<strlen(a);i++)                            //��ʽ 
-		hash[i] = ( ( hash[i-1] * base ) + a[i] ) % mod ;   //��ʽ 
-		vis[j++]=hash[i-1];          //ӳ��洢 
+		for(i=1;i<=strlen(a);i++)                            //¹«Ê½ 
+		hash[i] = ( ( hash[i-1] * base ) + a[i-1] ) % mod ;   //¹«Ê½ 
+		vis[j++]=hash[i];          //Ó³Éä´æ´¢ 
 		//cout<<hash[i-1]<<endl;
 	}
 	sort(vis,vis+n1);
