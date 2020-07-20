@@ -1,5 +1,5 @@
  #include <bits/stdc++.h>
-using namespace std;  //x^3-y^3==p--->(x-y)*(x^2+x*y+y^2)==p--->¡Óx-y==1; 
+using namespace std;  //x^3-y^3==p--->(x-y)*(x^2+x*y+y^2)==p--->√Å√Æx-y==1; 
 bool f(long long p)
 {
 	for (long long i = 1; i*i + i * (i + 1) + (i + 1)*(i + 1) <= p; i++) {
@@ -23,3 +23,4 @@ int main()
 	}
 	return 0;
 }
+ 
