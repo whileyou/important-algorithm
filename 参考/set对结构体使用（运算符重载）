@@ -1,0 +1,53 @@
+//题目：https://ac.nowcoder.com/acm/contest/5667/B
+ 
+#include <bits/stdc++.h>
+using namespace std;
+int n,ans,cnt;
+struct a{
+	double x,y;
+	bool operator<(const a&b) const
+	{
+		if(this->x==b.x){
+			if(this->y<b.y) return true;
+			return false;
+		}
+		if(this->x<b.x) return true;
+		return false;
+	}
+};
+struct po{
+	double x,y,x1,x2,y1,y2;
+}po[2001],o[2001*2001];
+int cmp(struct po a,struct po b)
+{
+	if(a.x==b.x) return a.y<b.y;
+	return a.x<b.x;
+}
+int main()
+{
+	scanf("%d",&n);
+	for(int i=0;i<n;i++) scanf("%lf %lf",&po[i].x,&po[i].y);
+	for(int i=0;i<n;i++){
+		for(int j=i+1;j<n;j++){
+			double a1=po[i].x,b1=po[i].y,c1=-(a1*po[i].x+b1*po[i].y)/2.0;
+			double a2=po[j].x,b2=po[j].y,c2=-(a2*po[j].x+b2*po[j].y)/2.0;;
+			if(a2*b1-a1*b2==0) continue;	//共线 
+			o[cnt].x=1.0*(b1*c2-b2*c1)/(b2*a1-b1*a2),o[cnt].y=1.0*(a1*c2-a2*c1)/(a2*b1-a1*b2);	//圆心 
+			o[cnt].x1=po[i].x,o[cnt].x2=po[j].x,o[cnt].y1=po[i].y,o[cnt++].y2=po[j].y;	//形成点位 
+		}
+	}
+	sort(o,o+cnt,cmp);
+	set<a> s;
+	for(int i=0;i<cnt;i++){
+		if(!(!i||(o[i].x==o[i-1].x&&o[i].y==o[i-1].y))) s.clear();
+		struct a xx;
+		xx.x=o[i].x1,xx.y=o[i].y1;
+		s.insert(xx);
+		xx.x=o[i].x2,xx.y=o[i].y2;
+		s.insert(xx);
+		int cal=s.size();
+		ans=max(ans,cal);
+	}
+	printf("%d",(!ans?1:ans));
+	return 0;
+}
