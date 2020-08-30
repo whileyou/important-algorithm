@@ -1,5 +1,6 @@
 //题目链接：http://acm.hdu.edu.cn/showproblem.php?pid=1024 
 //思路：dp+滚动数组+记忆化
+//时间复杂度：O(n*m)
  
 #include <bits/stdc++.h>
 using namespace std;
